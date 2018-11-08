@@ -1,0 +1,29 @@
+<?php
+$carerProfileType = 'short';
+$view = Constants::CARER_PROFILE_VIEW_GUEST;
+
+if (!isset($margin)) {
+    $margin = '4em';
+}
+?>
+<table class="rc-fb-table" style="margin-top:<?php echo $margin ?>;">
+    <tr>
+        <?php
+        $i = 1;
+        $carers = Carer::getRandomActiveCarers(6);
+        foreach ($carers as $carer) {
+            ?>        
+            <td class="rc-fb-cell-sample">
+                <?php
+                $this->renderPartial('application.views.carer.profile._carerProfileDetailsHTML5', array('carerProfileType' => $carerProfileType, 'carer' => $carer, 'view' => $view));
+                ?>
+            </td>
+            <?php
+            if ($i == 3) {
+                echo '</tr><tr>';
+            }
+            $i = $i + 1;
+        }
+        ?>
+    </tr>
+</table>

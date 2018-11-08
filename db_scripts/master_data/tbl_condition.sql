@@ -1,0 +1,12 @@
+INSERT INTO tbl_condition VALUES 
+  (19, 'alzheimer', 2, 1),
+  (17, 'cant_dressup', 1, 7),
+  (16, 'cant_wakeup', 1, 6),
+  (14, 'cant_walk', 1, 4),
+  (15, 'cant_washup', 1, 5),
+  (20, 'memory_problems', 2, 2),
+  (21, 'no_mental_problems', 2, 3),
+  (18, 'no_physical_problems', 1, 8),
+  (12, 'paraplegic', 1, 2),
+  (13, 'parkinson', 1, 3),
+  (11, 'tetraplegic', 1, 1);

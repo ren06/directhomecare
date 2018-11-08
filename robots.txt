@@ -1,0 +1,6 @@
+User-agent: *
+Sitemap: https://directhomecare.com/sitemap.xml
+Disallow: https://directhomecare.com/forgottenPassword
+Disallow: https://directhomecare.com/site/showPrice
+Disallow: https://directhomecare.com/site/rating
+Disallow: https://directhomecare.com/site/selectQuoteType

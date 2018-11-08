@@ -1,0 +1,48 @@
+'db' => array(
+    'connectionString' => 'mysql:host=188.121.40.115;dbname=directhomecare',
+    'emulatePrepare' => true,
+    'enableParamLogging' => true,
+    'username' => 'directhomecare',
+    'password' => 'DH56godaddydb!',
+    'charset' => 'utf8',
+    'class' => 'CDbConnection',
+    'enableProfiling' => true,
+),
+'db_photo' => array(
+     'connectionString' => "mysql:host=dhphoto.db.8332783.hostedresource.com;dbname=dhphoto",
+     'username' => 'directhomecare',
+     'password' => 'DHphOTO0!',
+     'charset' => 'utf8',
+     'class' => 'CDbConnection',
+ ),
+ 'db_criminal' => array(
+     'connectionString' => "mysql:host=$dbHost;dbname=dhcriminal",
+     'username' => 'directhomecare',
+     'password' => 'DHCrimINAL0!',
+     'charset' => 'utf8',
+     'class' => 'CDbConnection',
+ ),
+ 'db_diploma' => array(
+     'connectionString' => "mysql:host=$dbHost;dbname=dhdiploma",
+     'username' => 'directhomecare',
+     'password' => 'DHDipLoMA0!',
+     'charset' => 'utf8',
+     'class' => 'CDbConnection',
+ ),
+ 'db_driving_licence' => array(
+     'connectionString' => "mysql:host=$dbHost;dbname=dhdrivinglicence",
+     'username' => 'directhomecare',
+     'password' => 'DHDriVINGliC0!',
+     'charset' => 'utf8',
+     'class' => 'CDbConnection',
+ ),
+ 'db_identification' => array(
+     'connectionString' => "mysql:host=$dbHost;dbname=dhidentification",
+     'username' => 'directhomecare',
+     'password' => 'DHidENTIfica0!',
+     'charset' => 'utf8',
+     'class' => 'CDbConnection',
+ ),        
+ 
+ 
+  'runtimePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '../../',

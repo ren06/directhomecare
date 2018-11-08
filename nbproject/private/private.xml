@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="false"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>protected/models/live_in/LiveInMissionCarers.php</url>
+            <bookmark id="0">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>protected/views/clientBookedServices/bookedServices.php</url>
+            <bookmark id="0">
+                <name/>
+                <line>3</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>protected/views/site/carerJobs.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>protected/views/carer/admin/index.php</url>
+            <bookmark id="0">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+</project-private>

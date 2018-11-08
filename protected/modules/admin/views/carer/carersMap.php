@@ -1,0 +1,4 @@
+<?php
+
+UIServices::showCarersMap($carers);
+?>

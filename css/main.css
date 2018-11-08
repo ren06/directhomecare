@@ -1,0 +1,1510 @@
+/* RC Framework copyright: Direct Homecare Ltd 2010-2013 */
+/* Reset */ /* RC added input and took off "b" */
+html, body, div, span, applet, object, iframe, input,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, select {
+    margin: 0em;
+    padding: 0em;
+    border: 0em;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: top;
+}
+table {
+    width:100%;
+    border-collapse: collapse;
+    border-spacing: 0em;
+}
+/* Remove button padding in FF */
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
+    padding: 0 !important;
+    border: 0 none !important;
+}
+/* RC Framework copyright: Direct Homecare Ltd 2010-2013 */
+@font-face {
+    font-family: 'Liberationsans';
+    src: url('../../css/lato-regular.eot');
+    src: url('../../css/lato-regular.eot?#iefix') format('embedded-opentype'),
+        url('../../css/lato-regular.woff') format('woff'),
+        url('../../css/lato-regular.ttf') format('truetype'),
+        url('../../css/lato-regular.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Liberationsansbold';
+    src: url('../../css/lato-bold.eot');
+    src: url('../../css/lato-bold.eot?#iefix') format('embedded-opentype'),
+        url('../../css/lato-bold.woff') format('woff'),
+        url('../../css/lato-bold.ttf') format('truetype'),
+        url('../../css/lato-bold.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*@font-face {
+    font-family: 'Liberationsans';
+    src: url('../../css/LiberationSans-Regular-webfont.eot');
+    src: url('../../css/LiberationSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../css/LiberationSans-Regular-webfont.woff') format('woff'),
+        url('../../css/LiberationSans-Regular-webfont.ttf') format('truetype'),
+        url('../../css/LiberationSans-Regular-webfont.svg#liberation_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Liberationsansbold';
+    src: url('../../css/LiberationSans-Bold-webfont.eot');
+    src: url('../../css/LiberationSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../../css/LiberationSans-Bold-webfont.woff') format('woff'),
+        url('../../css/LiberationSans-Bold-webfont.ttf') format('truetype'),
+        url('../../css/LiberationSans-Bold-webfont.svg#liberation_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+body {
+    font-size:1em;
+    line-height:1; /* Line height will equal the em of each element */
+    color:#666;
+    background-color:#FFF;
+    font-family:Liberationsans, Arial, sans-serif;
+    cursor:default;
+    /*    overflow:auto;  to avoid collapsing margin */
+}
+/* Sticky Footer */
+body, html {
+    height:100%;
+}
+/* RC Header */
+.rc-stripe-header {
+    width:100%;
+    /*    border-bottom:1px solid #CCC;*/
+    /*    background-color:#6C3;*/
+}
+.rc-container-header {
+    width:60em;
+    height:4em;
+    position:relative;
+    margin:0 auto;
+}
+h1 {
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    font-size:2em;
+    display:inline-block;
+    height:0.8em; /* 1.6 x 2.5 = 4 */
+    line-height:0.8em; /* 1.6 x 2.5 = 4 */
+    padding-top:0.25em;
+}
+/*.rc-h1-withmenu {
+    font-size:1.5em;
+    height:2.66em;  2.66 x 2.5 = 4 
+    line-height:2.66;  2.66 x 2.5 = 4 
+}*/
+.rc-logo-white {
+    /*    color:#FFF;*/
+    color:#6C3;
+    text-decoration:none;
+}
+.rc-logo-grey {
+    /*    color:#339;*/
+    color:#66C;
+    text-decoration:none;
+}
+.rc-logo-blue {
+    /*    color:#339;*/
+    color:#339;
+    text-decoration:none;
+}
+.rc-slogan {
+    color:#666;
+    text-decoration:none;
+}
+.rc-container-login {
+    position:absolute;
+    right:0;
+    top:0;
+    height:4em;
+    line-height:4em;
+    text-align:right;
+}
+.rc-container-welcometext {
+    display:inline-block;
+    width:16em;
+    font-size:0.8em;
+    color:#FFF;
+    overflow:hidden; /* RC overflow and line-height hidde the name if too long */
+    white-space:nowrap;
+}
+.rc-container-button-signout {
+    display:inline-block;
+    height:1.6em;
+    margin:1.2em 0 1.2em 0;
+}
+/* RC Menu */
+.rc-container-menu {
+    width:auto; /* to remove the width 100% of tables */
+    position:absolute;
+    top:0em;
+    right:10em; /* By Mamar */
+}
+.rc-menu-cell {
+    height:4em;
+    line-height:4em;
+    border-left:#CCC 1px solid;
+    border-right:#CCC 1px solid;
+}
+.rc-menu-cell a {
+    display:inline-block;
+    line-height:4em;
+    padding:0 0.5em 0 0.5em;
+    color:#66C;
+    text-decoration:none;
+}
+.rc-menu-cell a:hover {
+    /*    text-decoration:underline;*/
+    background-color:#66C;
+    color:#FFF;
+}
+/* RC  Buttons */
+.rc-container-button {
+    text-align:center;
+    margin:2em 0 0 0;
+}
+.rc-container-button-leftallign {
+    margin:1em 0 0 0;
+}
+.rc-arrow {
+    display:inline-block;
+    font-family:'Arial Bold', sans-serif;
+    font-size:2em;
+    line-height:1em;
+    color:#BBB;
+    margin:0 0.25em 0 0.25em;
+    padding:0 0 0 0;
+}
+/* Buttons */
+/* Message me */
+.rc-button-white-border {
+    -webkit-appearance:none;
+    text-align:center;
+    cursor:pointer;
+    height:2em;
+    line-height:1.8em;
+    border:0.1em solid #66C;
+    padding:0 0.5em 0 0.5em;
+    margin:0 0 0 0;
+    background-color:transparent;
+    color:#66C;
+}
+.rc-button-white-border:hover {
+    border:0.1em solid #339;
+    color:#339;
+}
+.rc-button,
+.rc-button-small,
+.rc-button-white,
+.rc-button-white-small,
+.rc-button-white-small-white,
+.rc-wzd-previous,
+.rc-wzd-active {
+    -webkit-appearance:none;
+    text-align:center;
+    cursor:pointer;
+    height:2em;
+    line-height:2em;
+    padding:0 0.5em 0 0.5em;
+    margin:0 0 0 0;
+}
+.rc-180px-width{
+ width: 180px;
+}
+.rc-100px-width{
+ width: 100px;
+}
+/* Links */
+.rc-linkbutton,
+.rc-linkbutton-disabled,
+.rc-linkbutton-white-disabled,
+.rc-linkbutton-small,
+.rc-linkbutton-small-disabled,
+.rc-linkbutton-white-small,
+.rc-linkbutton-white-small-disabled {
+    -webkit-appearance:none;
+    cursor:pointer;
+    display:inline-block;
+    text-align:center;
+    vertical-align:middle;
+    text-decoration:none;
+    white-space:nowrap;
+    padding:0.5em 0.5em 0.5em 0.5em;
+    margin:0 0 0 0;
+}
+.rc-linkbutton-white-small,
+.rc-linkbutton-white-small-disabled {
+    display:block!important; /* Line break after for buttons in tables */
+}
+/* Dark */
+.rc-button,
+.rc-button-small,
+.rc-wzd-previous,
+.rc-linkbutton,
+.rc-linkbutton-small {
+    background-color:#66C;
+    color:#FFF!important; /* to balance with JQueryUI css */
+}
+.rc-button:hover,
+.rc-button:active,
+.rc-button-small:hover,
+.rc-wzd-previous:hover,
+.rc-wzd-active,
+.rc-linkbutton:hover,
+.rc-linkbutton-small:hover {
+    background-color:#339;
+    color:#FFF!important; /* to balance with JQueryUI css; also keep for wzd-active */
+}
+/* Transparent */
+.rc-button-white,
+.rc-button-white-small,
+.rc-button-white-small-white,
+.rc-linkbutton-white-small {
+    background-color:transparent;
+    color:#66C;
+}
+.rc-button-white:hover,
+.rc-button-white-small:hover,
+.rc-button-white-small-white:hover,
+.rc-linkbutton-white-small:hover {
+    text-decoration:underline;
+}
+/* Small */
+.rc-button-small,
+.rc-button-white-small,
+.rc-button-white-small-white,
+.rc-linkbutton-small,
+.rc-linkbutton-small-disabled,
+.rc-linkbutton-white-small,
+.rc-linkbutton-white-small-disabled {
+    font-size:0.8em;
+    line-height:1;
+}
+/* Disabled */
+.rc-linkbutton-disabled,
+.rc-linkbutton-white-disabled,
+.rc-linkbutton-small-disabled,
+.rc-linkbutton-white-small-disabled {
+    color:#666;
+    cursor:default;
+    outline:none; /* because disabled */
+}
+.rc-linkbutton-disabled,
+.rc-linkbutton-small-disabled {
+    background-color:#EEE;
+}
+/* RC Main */
+.rc-container-all {
+    min-height:100%;
+    height:auto!important;
+    height:100%;
+    margin:0 auto -6em;
+}
+.rc-container-screen {
+    width:60em;
+    position:relative;
+    margin:0 auto;
+    padding:0;
+}
+.rc-container-main {
+    min-height:34em;
+}
+.rc-container-30 {
+    width:30em;
+}
+.rc-container-30-float-left {
+    float:left;
+    width:30em;
+}
+.rc-container-29-float-right {
+    float:right;
+    width:29em;
+}
+.rc-container-greyed {
+    background: url('../../images/tile-ffffff-80.png');
+    padding:1em 1em 1em 1em;
+}
+.rc-container-darked {
+    background: url('../../images/tile-000000-50.png');
+}
+.rc-container-39-float-left {
+    float:left;
+    width:38em;
+}
+.rc-container-39-float-right {
+    float:right;
+    width:38em;
+}
+.rc-container-20-float-right {
+    float:right;
+    width:21em;
+}
+.rc-container-20-float-left {
+    float:left;
+    width:21em;
+}
+.rc-container-30-home {
+    width:30em;
+    padding:7em 0 0 0; /* padding instead of margin to prevent collapsing margin */
+    margin:0 0 0 0em;
+}
+.rc-container-33 {
+    width:33em;
+    padding:5em 0 0 0; /* padding instead of margin to prevent collapsing margin */
+    margin:0 0 0 0em;
+}
+.rc-container-34 {
+    width:34em;
+    padding:4em 0 0 0; /* padding instead of margin to prevent collapsing margin */
+    margin:0 0 0 0em;
+}
+.rc-container-40 {
+    width:40em;
+    margin:1em 0 0 0;
+}
+.rc-container-40-site {
+    width:40em;
+    padding:4em 0 0 0; /* padding to avoid collapse of margin */
+}
+.rc-container-60 {
+    width:60em;
+    margin:1em 0 0 0;
+}
+.rc-container-40-float-left {
+    float:left;
+    width:40em;
+}
+.rc-container-19-float-right {
+    float:right;
+    width:19em;
+}
+/* RC Header */
+h2 {
+    text-align:center;
+    font-size:2em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    margin:0 0 0 0;
+}
+.rc-h2red {
+    /*    display:block;*/
+    text-align:left;
+    color:#C36;
+    padding:0.5em 0 0 0; /* padding to prevent collapse of margin */
+}
+h3 {
+    font-size:1.5em;
+    color:#6C3;
+    margin:0 0 0 0;
+    padding:1em 0 0 0; /* padding to prevent collapse of margin */
+}
+h4 {
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#6C3;
+    margin:0 0 0 0;
+    padding:1em 0 0 0; /* padding to prevent collapse of margin */
+}
+h5 {
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    margin:0 0 0 0;
+    padding:0.5em 0 0 0; /* padding to prevent collapse of margin */
+}
+/* RC Quote */
+.rc-cell {
+    height:3em;
+    line-height:3em;
+    vertical-align:middle;
+}
+.rc-quote-cellbutton {
+    width:5%;
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    text-align:right;
+}
+.rc-quote-cellday {
+    width:45%;
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    text-align:left;
+}
+.rc-quote-celltime {
+    width:25%;
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    text-align:left;
+}
+/* RC Homepage */
+.rc-quote-price {
+    font-size:2em;
+    line-height:1em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+}
+.rc-quote-price-per {
+    font-size:1em;
+    line-height:2em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#C36;
+}
+li.rc-bulletpoint {
+    margin-left:1em;
+}
+.rc-button-homepage {
+    font-size:1.5em;
+}
+.rc-button-homepage-container:hover .rc-button-homepage {
+    background-color:#339;
+}
+.rc-home-servicedetail {
+    font-size:1.2em;
+    padding:1em 0 0 0;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#666;
+}
+.rc-home-stripe-1 {
+    background-color:#FFF;
+    padding:4em 0 4em 0;
+}
+.rc-home-stripe-2 {
+    background-color:#FFF;
+    padding:4em 0 4em 0;
+}
+.rc-home-stripe-3 {
+    background-color:#FFF;
+    padding:4em 0 2em 0; /* only 0em at bottom because stripe footer has margin of 2em */
+}
+.rc-home-stripe-comment {
+    padding:3em 0 3em 0;
+    background:#6C3;
+    color:#FFF;
+}
+.rc-container-comment {
+    line-height:2em;
+    font-size:2em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    text-align:center;
+}
+.rc-pitch-table {
+    width:100%;
+    padding:0 0 0 0;
+    margin:4em 0 0 0;
+}
+.rc-pitch-cell {
+    width:25%;
+    text-align:center;
+}
+.rc-pitch-firstline {
+    font-size:2em;
+    padding:0.5em 0 0 0;
+    line-height:1em;
+    text-align:center;
+    color:#6C3;
+}
+.rc-pitch-secondline {
+    padding:1em 0.25em 0 0.25em;
+    line-height:1.5em;
+    text-align:center;
+}
+.rc-pitch-thirdline {
+    padding:1em 0.25em 0 0.25em;
+    line-height:1.5em;
+    text-align:center;
+    color:#AAA;
+}
+.rc-container-bubble {
+    position:relative;
+    margin:2em 0 0 0;
+}
+.rc-bubble {
+    position:relative;
+    width:31.33em;
+    line-height:2em;
+    font-size:1.2em;
+    padding:1em;
+    background:#666;
+    color:#FFF;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    display:inline-block;
+}
+.rc-bubble-right {
+    position:absolute;
+    right:0;
+    width:31.33em;
+    line-height:2em;
+    font-size:1.2em;
+    padding:1em;
+    background:#666;
+    color:#FFF;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    display:inline-block;
+}
+.rc-bubble:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 16px 0 16px 48px;
+    border-color: transparent #666;
+    display: block;
+    width: 0;
+    z-index: 1;
+    right: -48px;
+    top: 22px;
+}
+.rc-bubble-right:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 16px 48px 16px 0;
+    border-color: transparent #666;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -48px;
+    top: 22px;
+}
+.rc-bubble-speaker {
+    position:absolute;
+    top:2em;
+    left:44.5em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+}
+.rc-bubble-speaker-right {
+    position:absolute;
+    top:2em;
+    left:2em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+}
+.rc-works-table {
+    width:100%;
+    padding:0 0 0 0;
+    margin:1em 0 0 0;
+}
+.rc-works-cell {
+    width:12%;
+    text-align:center;
+}
+.rc-works-arrow {
+    width:8%;
+    text-align:center;
+    vertical-align:middle;
+}
+.rc-works-cell-outside {
+    width:4%;
+}
+.rc-works-firstline {
+    width:20%;
+    font-size:2em;
+    padding:0.25em 0 0 0;
+    text-align:center;
+    color:#6C3;
+}
+/* RC Confirmation */
+.rc-container-arrows {
+    width:auto; /* to remove the width 100% of tables */
+    margin:1em 0 4em 17em;
+}
+.rc-cell-arrows {
+    text-align:center;
+    color:#FFF;
+}
+/* RC Table */
+.rc-table-cell-1-30, .rc-table-cell-2-40, .rc-table-cell-3-30 {
+    height:2.5em;
+    line-height:2.5em;
+    vertical-align:middle;
+}
+.rc-table-cell-1-30 {
+    width:30%;
+    padding:0 0.5em 0 0;
+    text-align:right;
+}
+.rc-table-cell-2-40 {
+    width:40%;
+}
+.rc-table-cell-3-30 {
+    width:30%;
+    padding:0 0 0 0.5em;
+}
+.rc-cell1 {
+    width:9em;
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    text-align:right;
+}
+.rc-cell1-short {
+    width:9em;
+    height:1.375em;
+    line-height:1.375em;
+    vertical-align:middle;
+    text-align:right;
+}
+.rc-cell1-free {
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    text-align:right;
+}
+.rc-cell1-uploadpopup {
+    width:18em;
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+}
+.rc-cellforbutton-uploadpopup {
+    width:18em;
+    padding-top:0.5em;
+    vertical-align:middle;
+}
+.rc-upload-tablecell-errors {
+    width:18em;
+    height:3.5em;
+    padding-top:0.5em;
+}
+.rc-cell2 {
+    height:2.75em;
+    min-width:8.5em;
+    line-height:2.75em;
+    vertical-align:middle;
+    padding-left:0.5em;
+    padding-right:0;
+}
+.rc-cell2-short {
+    height:1.375em;
+    min-width:8.5em;
+    line-height:1em;
+    vertical-align:middle;
+    padding-left:0.5em;
+}
+.rc-cell3 {
+    vertical-align:middle;
+    padding:0 0.5em 0 0.5em;
+}
+.rc-cell-error {
+    height:1.25em;
+    line-height:1.25em;
+    vertical-align:middle;
+}
+/* RC My Booking table */
+.rc-cell1-mybooking {
+    height:2.75em;
+    line-height:2.75em;
+    width:3em;
+    vertical-align:middle;
+}
+.rc-cell2-mybooking {
+    height:2.75em;
+    line-height:2.75em;
+    width:25.9em; /* 17+6.9*/
+    vertical-align:middle;
+}
+.rc-cell2long-mybooking {
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+}
+.rc-mybooking-overflow {
+    display:inline-block;
+    max-width:17em;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/* RC Invoice */
+.rc-invoice-table {
+    margin:1em 0 0 0;
+    width:100%;
+}
+.rc-invoice-smalltable-cell1 {
+    width:51em;
+    height:1.5em;
+    line-height:1.5em;
+    vertical-align:middle;
+    text-align:right;
+}
+.rc-invoice-smalltable-cell2 {
+    width:9em;
+    height:1.5em;
+    line-height:1.5em;
+    vertical-align:middle;
+    text-align:center;
+}
+/* RC Field */
+.rc-field, .rc-field-disabled, .rc-field-medium, .rc-field-medium-large, .rc-field-medium-disabled, .rc-field-small, .rc-field-small-disabled {
+    height:1.75em;
+    line-height:1.75em; /* trick for IE vertical align */
+    vertical-align:middle;
+    background:#FFF;
+    margin:0;
+    padding:0 0.5em 0 0.5em;
+}
+.rc-field {
+    width:18.5em;
+/*    border:1px solid #6C3;*/
+    border:1px solid #FFF;
+}
+.rc-field-disabled {
+    width:18.5em;
+    border:1px solid #EEE;
+}
+.rc-field-medium {
+    width:5.75em;
+    border:1px solid #FFF;
+}
+.rc-field-medium-large {
+    width:12.75em;
+    border:1px solid #FFF;
+}
+.rc-field-medium-large-disabled{
+    width:12.75em;
+    border:1px solid #EEE;
+}
+.rc-field-small {
+    width:2.5em;
+    border:1px solid #FFF;
+}
+.rc-field-small-disabled {
+    width:2.5em;
+    border:1px solid #EEE;
+}
+/* RC Drop */
+.rc-drop-long, .rc-drop-long-disabled, .rc-drop, .rc-drop-disabled {
+    vertical-align:middle;
+    background:#FFF;
+    margin:0; /* for Chrome */
+    padding:0.25em 0.25em 0.25em 0.5em; /* padding-top as no choice to vertical align */
+}
+.rc-drop-long {
+    width:19.65em; /* borders and padding do not increase size of drop-down as opposed to field */
+    border:1px solid #FFF;
+}
+.rc-drop-long-disabled {
+    width:19.65em; /* borders and padding do not increase size of drop-down as opposed to field */
+    border:1px solid #EEE;
+}
+.rc-drop {
+    border:1px solid #FFF;
+}
+.rc-drop-disabled {
+    border:1px solid #EEE;
+}
+/* RC Text Area */
+.rc-textarea, .rc-textarea-profile, .rc-textarea-chat, .rc-textarea-notes, .rc-container-chat {
+    line-height:1.5em;
+    background:#FFF;
+    font-size:1em; /* must be set for textarea */
+    font-family:Liberationsans, Arial, sans-serif; /* must be set for textarea */
+    border:1px solid #FFF;
+    margin:0 0 0 0;
+    padding:0 0.5em 0 0.5em;
+    resize:none;
+}
+.rc-textarea {
+    width:18.5em; /* same as field */
+    height:8em;
+}
+.rc-textarea-profile {
+    border-top:none; /* because it touches the menu bar */
+    width:38.9em;
+    height:6em;
+}
+.rc-textarea-chat {
+    width:28em;
+    height:6em;
+}
+.rc-textarea-notes {
+    width:28em;
+    height:6em;
+}
+.rc-container-chat {
+    width:38.9em;
+    min-height:1em;
+}
+/* RC Module */
+.rc-module-bar {
+    background-color:#6C3;
+    color:#FFF;
+    height:2.5em;
+    position:relative;
+    vertical-align:middle;
+    margin:1em 0 0 0;
+}
+.rc-module-bar-bottom {
+    background-color:#6C3;
+    bottom:0;
+    height:2.5em;
+    position:absolute;
+    right:0;
+    vertical-align:middle;
+    width:8.5em;
+}
+.rc-module-name {
+    position:absolute;
+    top:0.65em;
+    max-width:22em;
+    height:1.2em; /* RC overflow and line-height hidde the name if too long */
+    font-size:1em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    line-height:1.2em;
+    padding:0 0 0 1em;
+    overflow:hidden; /* RC overflow and line-height hidde the name if too long */
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.rc-module-container-button {
+    position:absolute;
+    top:0.475em;
+    right:0.475em;
+}
+.rc-module-inside {
+    background:#EEE;
+    margin:0 0 0 0;
+    padding:1em 1em 1em 1em;
+    position:relative;
+}
+.rc-module-bar-approvalverified {
+    position:absolute;
+    top:0.475em;
+    left:20em;
+}
+.rc-button-small-space-left {
+    margin-left:0.5em
+}
+.rc-container-column3 {
+    width:18em; /* 20-2*1em padding = 18 */
+    padding:0 1em 0 1em;
+    text-align:right;
+    float:right;
+}
+.rc-container-conditions-tickbox {
+    margin:0.5em 0 0 1em;
+    padding:0 0 0 0;
+}
+.rc-container-tickbox {
+    margin:0.5em 0 0 0;
+    padding:0 0 0 0;
+}
+.rc-container-conditions-field {
+    height:2.75em;
+    line-height:2.75em;
+    vertical-align:middle;
+    padding:0 0 0 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    line-height:inherit;
+    display:inline-block;
+    margin:0 0.25em 0 0;
+    vertical-align:middle!important;
+}
+p input[type="checkbox"],
+p input[type="radio"] {
+    height:1.5em;
+    line-height:inherit;
+    display:inline-block;
+    margin:0 0.25em 0 0;
+    vertical-align:middle!important;
+}
+input[type="radio"]:disabled {
+    color:#EEE;
+}
+
+.rc-cell2 span, .rc-cell input[type="radio"] { /* For radio buttons in table under Chrome */
+    display:inline-block;
+    height:2.75em;
+}
+.rc-header-calendar {
+    width:7.14em; /* 60 / 7days /1.2 = 7.14 */
+    height:1.67em; /* 2 / 1.2 = 1.67 */
+    font-size:1.2em;
+    text-align:left;
+    color:#6C3;
+    padding-left:1em;
+
+}
+.rc-cell-calendar {
+    height:2em;
+    font-size:0.8em;
+    padding-left:1em;
+}
+.rc-ad-container {
+    text-align:center;
+    padding-top:3em;
+}
+.rc-note {
+    /*    color:#666;*/
+}
+.rc-disabled {
+    color:#EEE;
+    border:1px solid #EEE;
+}
+p {
+    margin:0.5em 0 0 0;
+    line-height:1.5em;
+}
+hr {
+    height:0.125em;
+    color:#6C3;
+    border:0;
+    margin:1em 0 0 0;
+    background-color:#6C3;
+}
+/* RC Footer */
+.rc-container-footer-push {
+    height:6em; /* .push must be the same height as .footer (height + margin) */
+}
+.rc-stripe-footer {
+    height:6em;
+    margin:2em 0 0 0;
+    background-color:#EEE;
+}
+.rc-container-footer {
+    position:relative;
+    line-height:6em;
+}
+.rc-menu-footer {
+    position:absolute;
+    right:0;
+}
+/* RC Links */
+.rc-link, #yw0_button {  /* ID of the "New code" link in Contact: yw0_button */
+    color:#66C!important;
+    text-decoration:none;
+    cursor:pointer;
+}
+.rc-link-header-menu {
+    /*    color:#FFF;*/
+    color:#66C;
+    text-decoration:none;
+}
+.rc-linkred {
+    color:#C36!important;
+    text-decoration:none;
+}
+.rc-link-toolbox {
+    cursor:pointer;
+}
+.rc-link:hover, #yw0_button:hover, .rc-linkred:hover, .rc-link-header-menu:hover {
+    text-decoration:underline;
+}
+#yw0 {
+    border:1px solid #EEE;
+    margin:0 0.25em 0 0;
+}
+/* RC Notices */
+div.flash-error, div.flash-notice, div.flash-success {
+    padding:1em 1em 1em 1em;
+    margin:1em 0 0em 0;
+    line-height:1.5em;
+}
+div.flash-error {
+    background:#C36;
+    color:#FFF;
+}
+div.flash-notice {
+    background:#FC3;
+    /*    color:#FC3;*/
+}
+div.flash-success {
+    background:#393;
+    color:#FFF;
+}
+span.required {
+    font-family:Arial!important;
+    color:#C36;
+}
+.rc-error {
+    color:#C36;
+}
+input.error, select.error, textarea.error {
+    border-color:#C36;
+}
+label.error {
+    color:#C36;
+}
+/* RC Photo crop */
+.rc-container-photosample {
+    margin:0 0 0.5em 0;
+    position:relative;
+}
+.rc-image-photosample {
+    position:absolute;
+    right:0;
+    top:0.5em;
+    border:1px solid #666;
+}
+/* RC Slider */
+.headerimg-site {
+    background-position:center top; /* center top is OK */
+    background-repeat:no-repeat;
+    width:100%;
+    height:38em;
+    position:absolute;
+}
+.headerimg {
+    background-position:center top; /* center top is OK */
+    background-repeat:no-repeat;
+    width:100%;
+    height:34em;
+    position:absolute;
+}
+#headertxt {
+    width:25em;
+    margin:0 auto;
+    clear:both;
+    position:relative;
+    top:25em;
+    padding-left:35em;
+}
+#firstline {
+    /*    background-image:url("../../images/textbg.png");*/
+    color:#FFF;
+    font-size:2.5em;
+    /* padding:4px 13px 7px; */
+    float:left;
+    display:block;
+    text-shadow: 1px 1px 8px #777;
+}
+#secondline {
+    /*RT background-image:url("../../images/textbg.png"); */
+    color:#FFF;
+    text-decoration:none;
+    font-size:3.75em;
+    /* padding:0 13px 10px;*/
+    float:left;
+    display:block;
+    clear:both;
+    font-style:italic;
+    text-shadow: 1px 1px 8px #777;
+}
+/* RC FB */
+.rc-fb-table {
+    width:100%;
+    margin:1em 0 0 0;
+}
+.rc-fb-container-sample-vertical {
+    width:19em;
+    margin:0 0 0 1em;
+    float:right;
+}
+.rc-fb-cell {
+    width:33%;
+    padding:0.5em 0.25em 0.5em 0.25em;
+    background-color:#EEE;
+    border:1em solid #FFF;
+}
+.rc-fb2-cell {
+    padding:1em 0 1em 0;
+    background-color:#EEE;
+}
+.rc-fb-cell-sample {
+    width:33%;
+    padding:0.5em 0.25em 0.5em 0.25em;
+/*    background-color:#EEE;*/
+    /*    border:1em solid transparent;*/
+}
+.rc-fb-cell-selected {
+    width:33%;
+    padding:0.5em 0.25em 0.5em 0.25em;
+    background-color:#BBB;
+    border:1em solid #FFF;
+}
+.rc-fb2-profile, .rc-fb2-profile-selected {
+    background-color:#EEE;
+    margin:1em 0 0 0;
+    padding:1em 1em 1em 1em;
+}
+.rc-fb2-profile.selected {
+    background-color:#BBB;
+}
+.rc-container-fb2-criteria {
+    margin:0 0 0 0;
+}
+.rc-fb2-nameandcity {
+    display:block;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    overflow:hidden;  /* RC overflow and line-height hidde the name if too long */
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    max-width:10.5em;
+}
+.rc-container-fb2-criteria-line-odd {
+    background-color:#EEE;
+     padding:1em 0em 1em 1em; 
+}
+.rc-container-fb2-criteria-line-even {
+    background-color:#DDD;
+     padding:1em 0em 1em 1em; 
+}
+.rc-fb-cell-blank {
+    width:33%;
+    padding:0.5em 0.25em 0.5em 0.25em;
+    border:1em solid #FFF;
+}
+tr:first-child .rc-fb-cell, tr:first-child .rc-fb-cell-selected {
+    border-top:0
+}
+tr:last-child .rc-fb-cell, tr:last-child .rc-fb-cell-selected {
+    border-bottom:0
+}
+.rc-fb-cell:first-child, .rc-fb-cell-selected:first-child {
+    border-left:0;
+}
+.rc-fb-cell:last-child, .rc-fb-cell-selected:last-child {
+    border-right:0;
+}
+.rc-fb-icon {
+    padding:4px 4px 0 0;
+    height:15px;
+}
+.rc-fb-icon-certificate {
+    padding:2px 4px 0 0;
+    height:18px;
+}
+.rc-fb-icon-star {
+    padding:1px 0 0 2px;
+    height:18px;
+}
+.rc-fb-icon-favourite {
+    padding:0 4px 0 0;
+    height:16px;
+}
+.rc-fb-small-loader {
+    height:1em;
+}
+.rc-fb-firstname {
+    overflow:hidden;  /* RC overflow and line-height hidde the name if too long */
+    white-space:nowrap;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#C36;
+    text-overflow:ellipsis;
+    max-width:8em;
+}
+.rc-fb-nexttoimage {
+    display:inline-block;
+    padding-left:0.25em;
+}
+/* RC Calendar */
+.rc-calendar {
+    width:100%;
+    text-align:center;
+}
+.rc-calendar-month {
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#C36;
+    font-size:2em;
+    border-bottom:2px #6C3 solid;
+    padding:0 0 0 0.25em;
+}
+.rc-calendar-week {
+    width:14.25%;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    padding:0.5em 0.5em 0.5em 0.5em;
+}
+.rc-calendar-day {
+    height:5.75em;
+    border:1px solid #DDD;
+    padding:0 0.5em 0.25em 0.5em;
+}
+.rc-calendar-day-number {
+    font-size:0.8em;
+    font-family:Liberationsansbold, 'Arial Bold', sans-serif;
+    color:#C36;
+    display:inline-block;
+    height:2em;
+    line-height:2em;
+    vertical-align:middle;
+}
+.rc-calendar-day-past {
+    color:#DDD;
+}
+/* RC Upload*/
+.rc-container-upload {
+    /*    height:9em;
+        position:relative;*/
+    margin:0.5em 0 0 0;
+    display:inline-block;
+}
+.rc-container-uploadnoheight {
+    position:relative;
+    margin:0 0 0 0;
+}
+.rc-upload-container-display {
+    /*    position:absolute;
+        top:0;
+        right:0;
+        width:30em;   */
+    display:inline-block;
+}
+.rc-waitingforappoval, .rc-verified, .rc-rejected {
+    cursor:default;
+    font-size:1em;
+    line-height:1em;
+    text-decoration:none;
+    text-align:center;
+    padding:0.5em 0.5em 0.5em 0.5em;
+    margin:0;
+    white-space:nowrap;
+    display:inline-block; /* to have div on the same line */
+}
+.rc-waitingforappoval {
+    /*    color:#666;*/
+    background:#FC3;
+}
+.rc-verified {
+    color:#FFF;
+    background:#393;
+}
+.rc-rejected {
+    color:#FFF;
+    background:#C36;
+}
+.rc-image-profile {
+    height:auto !important;
+    border:1px solid #666;
+    width:6em;
+/*    height:7.5em;*/
+} 
+.rc-image-profile-small {
+    height:auto !important;
+    border:1px solid #666;
+    width:5em;
+}
+.rc-image-bookings {
+    width:1.5em;
+    height:1.875em;
+    border:1px solid #666;
+}
+.rc-upload-container-dropdown {
+    /*    position:relative;*/
+    margin:0.25em 0 0.25em 0;
+    padding:0 0 0 0;
+    /*    height:2em; for error messages */ 
+    line-height:2em;
+    vertical-align:middle;
+}
+.rc-upload-tablecell { /* used for _createComplainDialog.php and _createRejectDocumentDialog.php */
+    height:3em;
+    width:8em;
+}
+.rc-container-upload-table {
+    margin:0 auto;
+}
+rc-row-blue {
+    background:none repeat scroll 0 0 blue;
+}
+rc-row-green {
+    background:none repeat scroll 0 0 green;
+}
+rc-row-greenyellow {
+    background:none repeat scroll 0 0 greenyellow;
+}
+rc-row-grey {
+    background:none repeat scroll 0 0 grey;
+}
+/* RC Grid */
+.grid-view-loading {
+    background:url('../../images/grid-loading.gif') no-repeat;
+}
+.grid-view {
+    padding:15px 0;
+}
+.grid-view table.items {
+    background:#FFF;
+    border-collapse:collapse;
+    width:100%;
+    /*    border: 1px #D0E3EF solid;*/
+}
+.grid-view table.items th, .grid-view table.items td {
+    font-size:1em;
+    border-left:1px #FFF solid;
+    padding:0.25em;
+}
+.grid-view table.items th {
+    color:#FFF;
+    background-color:#6C3;
+    height:2em; /* to make it 40px heigh same as module bar*/
+    text-align:center;
+}
+/*.grid-view table.items th a {
+    color:#EEE;
+    text-decoration: none;
+}
+.grid-view table.items th a:hover {
+    color:#FFF;
+}*/
+.grid-view table.items th a.asc {
+    background:url('../../images/grid-up.gif') right center no-repeat;
+    padding-right: 10px;
+}
+.grid-view table.items th a.desc {
+    background:url('../../images/grid-down.gif') right center no-repeat;
+    padding-right: 10px;
+}
+.grid-view table.items tr.odd {
+    background: #EEE;
+}
+.grid-view table.items tr.even {
+    background: #DDD;
+}
+.grid-view table.items tr.rc-row-greyed {
+    background: #CCC;	
+}
+.grid-view table.items tr.rc-row-pinked {
+    background: #C66;
+}
+.rc-row-stronggreen {
+    background-color:#DDD;
+}
+.grid-view table.items tr.rc-row-lightgreyed {
+    background:#EEE;
+}
+.grid-view table.items tr.selected {
+    /*	background: #BCE774;*/
+}
+.grid-view table.items tbody tr:hover {
+    /*	background: #ECFBD4;*/
+}
+.grid-view .link-column img {
+    border: 0;
+}
+.grid-view .button-column {
+    text-align: center;
+    /*    width: 60px;*/
+}
+.grid-view .button-column img {
+    border: 0;
+}
+.grid-view .checkbox-column {
+    width: 15px;
+}
+.grid-view .summary {
+    margin: 0 0 5px 0;
+    text-align: right;
+}
+.grid-view .pager {
+    margin: 5px 0 0 0;
+    text-align: right;
+}
+.grid-view .empty {
+    font-style: italic;
+}
+.grid-view .filters input, .grid-view .filters select {
+    width: 100%;
+    border: 1px solid #CCC;
+}
+.grid-view th {
+    vertical-align:middle;
+}
+.grid-view td {
+    text-align:center;
+    vertical-align:middle;
+}
+/* RC Yii table */
+div.pager {
+    padding-top:0.5em;
+}
+ul.yiiPager a {
+    border-color:#339!important;
+    color:#339!important;
+}
+ul.yiiPager .selected a, ul.yiiPager a:hover {
+    background-color:#66C!important;
+    border-color:#66C!important;
+    color:#FFF!important;
+}
+ul.yiiPager {
+    font-size:1em !important;
+    border:0 !important;
+    margin:0 0 0 0!important;
+}
+table.items {
+    margin-top:0 !important;
+}
+/* RC Social */
+.rc-container-socialpluggins {
+    height:2em;
+    padding:0 0 0 0;
+    margin:1em 0 0 0;
+}
+.rc-socialpluggins {
+    display:inline-block;
+    min-width:6em;
+}
+/* RC Others*/
+.rc-statusandlabel-red {
+    color:#C36;
+}
+.rc-map-infowindow {
+    width:15em;
+    font-size:0.8em;
+    line-height:1.5em;
+}
+.rc-carer-price-table {
+    width:100%;
+    margin:1em 0 0 0;
+}
+.rc-question-show {
+    color:#66C;
+    cursor:pointer;
+    margin:1em 0 0 0;
+}
+.rc-question-show:hover {
+    text-decoration:underline;
+}
+/* RC ToolTip */
+.qtip-light {
+    font-size:12.8px!important; /* same as 0.8em */
+    line-height:16px!important; /* same as 1em */
+}
+/* label in input field */
+.input {
+    display:inline-block;
+    position:relative;
+}
+.input span {
+    display:inline-block;
+    line-height:1.3em;
+    vertical-align:middle;
+    background:#FFF;
+    margin:0;
+    padding:0 0.5em 0 0;
+    height:1.1em;
+    font-size:1.5em;
+    position:absolute;
+    left:0.65em;
+    top:0.4em;
+    color: #999;
+    z-index: 1;
+    cursor: text;
+    pointer-events: none;
+}
+.input input, .input textarea, .input select {
+    z-index: 0;
+    /*  padding: 6px;*/
+    margin: 0;
+    /*  font: inherit;*/
+}

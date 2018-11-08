@@ -1,0 +1,1 @@
+<img class="<?php echo $class ?>" src="<?php echo Yii::app()->createAbsoluteUrl('carer/getImage', array('fileContent' => $fileContent->id, 'doc' => $doc->id)); ?>" alt="Photo" height="<?php //echo $height ?>" width="<?php echo $width?>" style="display:<?php echo ($visible == true ? 'visible' : 'none'); ?>" />

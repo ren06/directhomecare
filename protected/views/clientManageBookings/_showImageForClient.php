@@ -1,0 +1,1 @@
+<img class="<?php echo $cssClass ;?>" style="<?php echo $style ;?>" src="<?php echo Yii::app()->createAbsoluteUrl('site/getImageForGuest', array('documentId' => $documentId, 'crop' => $crop)); ?>" alt="Photo"/>

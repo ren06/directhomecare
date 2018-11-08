@@ -1,0 +1,14 @@
+DROP DATABASE dhphoto;
+CREATE DATABASE dhphoto CHARACTER SET utf8;
+
+DROP DATABASE dhcriminal;
+CREATE DATABASE dhcriminal CHARACTER SET utf8;
+
+DROP DATABASE dhdrivinglicence; 
+CREATE DATABASE dhdrivinglicence CHARACTER SET utf8;
+
+DROP DATABASE dhidentification;
+CREATE DATABASE dhidentification CHARACTER SET utf8;
+
+DROP DATABASE dhdiploma;
+CREATE DATABASE dhdiploma CHARACTER SET utf8;

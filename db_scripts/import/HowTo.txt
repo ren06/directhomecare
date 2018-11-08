@@ -1,0 +1,3 @@
+Update bigdump.php with db name - username/password - sql file name
+Put your sql file in this folder
+Execute hostname/db_scripts/import/bigdump.php

@@ -1,0 +1,84 @@
+
+<div class="rc-module-bar">
+    <div class="rc-module-name">
+        <?php // echo Yii::t('texts', 'NOTE_FOR_ONE_OFF_VISITS'); ?>
+        <!--        One-off visit-->
+        Select the date and time you need a carer for
+    </div>
+</div>
+<div class="rc-module-inside">
+    <?php
+    if ($quote->hasErrors()) {
+        $style = "display:visible";
+        $error = CHtml::error($quote, "errorMessage");
+    } else {
+        $style = "display:none";
+        $error = '';
+    }
+    ?>
+
+    <div class="flash-error" style="<?php echo $style ?>;margin-top:0;">
+        <?php echo $error; ?>
+    </div>
+
+    <div class="dayForms">
+        <?php
+        $models = $quote->dayForms;
+        foreach ($models as $key => $model) {
+
+            $this->renderPartial('/selectDates/_hourlyOneDay', array('dayForm' => $model, 'index' => $key));
+        }
+
+        Session::setSelectDatesMaxIndex(count($models) - 1);
+        ?>
+    </div>
+
+    <?php
+    $url = $this->createUrl('site/addDay');
+    ?>
+    Do you want to book more than one day? <?php
+    echo CHtml::ajaxLink('Add Day', $url, array('type' => 'GET',
+        'success' => "function(result, status){
+                   
+                    var html = decodeURIComponent(escape(result['html']));
+                    $('.dayForms').append(html);     
+                
+                    var htmlPrice = decodeURIComponent(escape(result.htmlPrice));
+                     $('#oneDayResult').html(htmlPrice);
+                                       
+                  }",
+        //'data' => 'js:{index: $(".dayForms table").length}',
+        'dataType' => 'json',
+            ), array(0));
+    ?>
+
+    <table>
+        <tr>
+            <td colspan ="4">
+                <hr />
+            </td>           
+        </tr>
+
+        <tr>
+            <td class="rc-quote-cellbutton">
+            </td>
+            <td class="rc-quote-cellday">
+                <?php echo Chtml::label('PRICE', 'price') ?>
+            </td>
+            <td class="rc-quote-celltime">
+                <div id ="oneDayResult">
+                    <?php
+                    $this->renderPartial('/selectDates/_hourlyResult', array('quote' => $quote));
+                    ?>
+                </div>
+            </td>
+            <td class="rc-quote-celltime">
+                <?php
+                echo CHtml::submitButton(Yii::t('texts', 'BUTTON_CONTINUE'), array('submit' => array('selectDates', 'nav' => 'next'), 'class' => 'rc-button'));
+                ?>
+            </td>
+
+        </tr>
+
+    </table>
+</div>
